@@ -1,6 +1,6 @@
 # Simple Beamer deck
 
-A small 16:9 LaTeX presentation based on `docs/research-template.pptx`. It uses a white background, Calibri text with a pdfLaTeX-compatible fallback, Illinois blue (`#004C97`) titles and divider rules, dark gray body text, and Fermilab and DarkNESS logos. The Illinois Block I logo is omitted. `main.tex` sets up the deck and includes each slide in order. Keep shared styling and image lookup in `preamble.tex`.
+A small 16:9 LaTeX presentation based on `docs/research-template.pptx`. It uses the reference's 13.333 × 7.5 inch canvas, white background, Calibri text with a pdfLaTeX-compatible fallback, Illinois blue (`#004C97`) titles and divider rules, dark gray body text, and Fermilab and DarkNESS logos. The Illinois Block I logo is omitted. `main.tex` sets up the deck and includes each slide in order. Keep shared styling and image lookup in `preamble.tex`.
 
 The title slide uses a 40 pt blue title, 20 pt subtitle, and 14 pt gray author line. Content slides use a 24 pt blue title and 18 pt body. The divider rules and page numbers are blue.
 

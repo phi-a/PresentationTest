@@ -31,45 +31,46 @@
 \setbeamerfont{itemize/enumerate subbody}{family=\sffamily,size=\fontsize{18pt}{22pt}\selectfont}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamersize{text margin left=0.6cm,text margin right=0.6cm}
+\setbeamersize{text margin left=0.6in,text margin right=0.6in}
 \setlength{\parskip}{0pt}
 
 % The reference master uses Fermilab and DarkNESS marks in the header.
 % Figure lookup supports PNG and PDF assets in figures/.
 \graphicspath{{figures/}}
-\newcommand{\ResearchRule}{\textcolor{illinoisblue}{\rule{\dimexpr\paperwidth-1.2cm\relax}{1.25pt}}}
-\newcommand{\ResearchRuleRow}{\hbox to \paperwidth{\hspace*{0.6cm}\ResearchRule\hss}}
+\newcommand{\ResearchRule}{\textcolor{illinoisblue}{\rule{\dimexpr\paperwidth-1.2in\relax}{1.25pt}}}
+\newcommand{\ResearchRuleRow}{\hbox to \paperwidth{\hspace*{0.6in}\ResearchRule\hss}}
+\newcommand{\ResearchBodyRuleRow}{\hspace*{-0.6in}\ResearchRuleRow}
 \newcommand{\ResearchPageNumber}{%
-  \hbox to \paperwidth{\hfill{\fontsize{10pt}{10pt}\selectfont\color{illinoisblue}\insertframenumber}\hspace*{0.6cm}}%
+  \hbox to \paperwidth{\hfill{\fontsize{10pt}{10pt}\selectfont\color{illinoisblue}\insertframenumber}\hspace*{0.6in}}%
 }
 
 % Main-slide master: title and both logos, then a blue divider.
 \setbeamertemplate{frametitle}{%
   \nointerlineskip
-  \vbox to 0.86cm{%
+  \vbox to 0.86in{%
     \vfil
     \hbox to \paperwidth{%
-      \hspace*{0.6cm}%
-      \begin{minipage}[c][0.62cm][c]{7.05cm}%
+      \hspace*{0.6in}%
+      \begin{minipage}[c][0.62in][c]{7.05in}%
         {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}%
       \end{minipage}%
-      \hspace*{0.22cm}%
-      \includegraphics[width=1.97cm,height=0.42cm,keepaspectratio]{FERMI_LOGO-1.png}%
-      \hspace*{0.22cm}%
-      \includegraphics[width=2.04cm,height=0.50cm,keepaspectratio]{DarkNESS_LOGO-1.png}%
+      \hspace*{0.22in}%
+      \includegraphics[width=1.97in,height=0.42in,keepaspectratio]{FERMI_LOGO-1.png}%
+      \hspace*{0.22in}%
+      \includegraphics[width=2.04in,height=0.50in,keepaspectratio]{DarkNESS_LOGO-1.png}%
       \hfill
     }%
     \vfil
   }%
-  \ResearchRuleRow
-  \vspace*{0.196cm}%
+  \ResearchBodyRuleRow
+  \vspace*{0.196in}%
 }
 
 % Main-slide footer: matching blue divider and blue page number.
 \setbeamertemplate{footline}{%
-  \vbox to 0.48cm{%
+  \vbox to 0.48in{%
     \ResearchRuleRow
-    \vspace*{0.04cm}%
+    \vspace*{0.04in}%
     \ResearchPageNumber%
     \vfil
   }%

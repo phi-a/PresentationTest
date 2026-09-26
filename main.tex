@@ -1,4 +1,11 @@
 \documentclass[aspectratio=169,14pt]{beamer}
+% Match the 13.333 x 7.5 inch canvas used by the reference PowerPoint master.
+\makeatletter
+\beamer@paperwidth=13.333in
+\beamer@paperheight=7.5in
+\setlength{\paperwidth}{\beamer@paperwidth}
+\setlength{\paperheight}{\beamer@paperheight}
+\makeatother
 \input{preamble}
 
 \title{Presentation title}
