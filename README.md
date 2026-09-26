@@ -1,6 +1,20 @@
 # Simple Beamer deck
 
-A small 16:9 LaTeX presentation with one consistent look: dark background, light text, one cyan accent, fixed margins, and page numbers. Start a new deck by editing `main.tex`; leave shared styling and image lookup in `preamble.tex`.
+A small 16:9 LaTeX presentation with one consistent look: dark background, light text, one cyan accent, fixed margins, and page numbers. `main.tex` sets up the deck and includes each slide in order. Keep shared styling and image lookup in `preamble.tex`.
+
+## Slide files
+
+Each slide lives in its own `.tex` file under `slides/`. Use a two-digit order number followed by a short lowercase name, such as `01-title.tex` or `02-dark-matter.tex`. The number gives the intended position in the deck.
+
+Add each new slide to `main.tex` with an `\input{slides/...}` line in the same numbered order. The include list is the authoritative deck order. For example:
+
+```tex
+\input{slides/01-title}
+\input{slides/02-dark-matter}
+\input{slides/03-results}
+```
+
+To insert or move a slide, rename the affected files and update the include list. Keep each file to one `frame` environment; do not put the document preamble or `\begin{document}` in slide files.
 
 ## Slide rhythm
 
@@ -10,7 +24,7 @@ A small 16:9 LaTeX presentation with one consistent look: dark background, light
 - Add `\Source{...}` when a slide uses external evidence.
 - Keep the palette and spacing consistent. Avoid adding decorative elements just to fill space.
 
-The example slide in `main.tex` shows the default title, takeaway, two-column, and source treatments. Copy its frame when adding a slide.
+The example slides show the title, takeaway, two-column, and source treatments. Copy a slide file when adding a slide.
 
 ## Figures
 
@@ -37,7 +51,7 @@ The generated PDF and temporary build files stay out of Git.
 The working directory is the Git repository. Commit source and figures as usual, then push to GitHub:
 
 ```sh
-git add main.tex preamble.tex README.md figures
+git add main.tex preamble.tex README.md figures slides
 git commit -m "Update presentation"
 git push origin main
 ```
