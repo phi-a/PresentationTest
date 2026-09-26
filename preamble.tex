@@ -1,0 +1,32 @@
+% Shared visual rules for this deck. Keep slide-level choices in main.tex.
+
+\definecolor{night}{HTML}{0B1020}
+\definecolor{paper}{HTML}{F4F7FA}
+\definecolor{accent}{HTML}{77D9E8}
+
+\setbeamercolor{background canvas}{bg=night}
+\setbeamercolor{normal text}{fg=paper}
+\setbeamercolor{frametitle}{fg=paper,bg=night}
+\setbeamercolor{structure}{fg=accent}
+
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{title}{size=\LARGE,series=\bfseries}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{date}{size=\small}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{%
+  \hfill\usebeamerfont{page number in head/foot}%
+  \usebeamercolor[fg]{normal text}%
+  \insertframenumber\hspace{0.45cm}\vspace{0.25cm}%
+}
+\setbeamercolor{page number in head/foot}{fg=paper}
+\setbeamersize{text margin left=0.9cm,text margin right=0.9cm}
+
+% Resolve image filenames from figures/ (PNG and PDF are both supported).
+\graphicspath{{figures/}}
+
+% Small set of repeatable content treatments.
+\newcommand{\Takeaway}[1]{{\Large\color{accent}#1\par}}
+\newcommand{\SectionLabel}[1]{{\large\bfseries#1\par}\vspace{0.15cm}}
+\newcommand{\Source}[1]{\vspace{0.18cm}{\tiny Source: #1\par}}
