@@ -1,20 +1,38 @@
 \documentclass[aspectratio=169]{beamer}
 
-\usetheme{default}
+\definecolor{night}{HTML}{0B1020}
+\definecolor{accent}{HTML}{77D9E8}
+\setbeamercolor{background canvas}{bg=night}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{frametitle}{fg=white}
 \setbeamertemplate{navigation symbols}{}
-
-\title{Presentation Title}
-\author{Your Name}
-\date{\today}
+\setbeamertemplate{footline}{}
+\setbeamersize{text margin left=0.9cm,text margin right=0.9cm}
 
 \begin{document}
 
-\begin{frame}
-  \titlepage
-\end{frame}
+\begin{frame}[t]{Dark matter}
+  \vspace{0.25cm}
+  {\Large\color{accent}We detect its gravity, but not its light.\par}
 
-\begin{frame}{First Slide}
-  Add your main point here.
+  \vspace{0.7cm}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}{0.48\textwidth}
+      {\large\bfseries Galaxy rotation\par}
+      \vspace{0.15cm}
+      Outer stars move faster than visible matter alone predicts.
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      {\large\bfseries Gravitational lensing\par}
+      \vspace{0.15cm}
+      Distorted background galaxies reveal mass we cannot see.
+    \end{column}
+  \end{columns}
+
+  \vfill
+  {\large\textbf{Open question:} What is dark matter made of?\par}
+  \vspace{0.35cm}
+  {\tiny Source: \href{https://science.nasa.gov/dark-matter/}{NASA Science, ``Dark Matter''}.}
 \end{frame}
 
 \end{document}
