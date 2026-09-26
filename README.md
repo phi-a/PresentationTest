@@ -1,6 +1,6 @@
 # Simple Beamer deck
 
-A small 16:9 LaTeX presentation based on `docs/research-template.pptx`. It uses a white background, Calibri text, Illinois blue (`#004C97`) titles and divider rules, dark gray body text, and Fermilab and DarkNESS logos. The Illinois Block I logo is omitted. `main.tex` sets up the deck and includes each slide in order. Keep shared styling and image lookup in `preamble.tex`.
+A small 16:9 LaTeX presentation based on `docs/research-template.pptx`. It uses a white background, Calibri text with a pdfLaTeX-compatible fallback, Illinois blue (`#004C97`) titles and divider rules, dark gray body text, and Fermilab and DarkNESS logos. The Illinois Block I logo is omitted. `main.tex` sets up the deck and includes each slide in order. Keep shared styling and image lookup in `preamble.tex`.
 
 The title slide uses a 40 pt blue title, 20 pt subtitle, and 14 pt gray author line. Content slides use a 24 pt blue title and 18 pt body. The divider rules and page numbers are blue.
 
@@ -45,7 +45,7 @@ Compile with XeLaTeX so the template can use system fonts:
 latexmk -xelatex -outdir=build main.tex
 ```
 
-Calibri is used when installed. If the compiler cannot find Calibri, the template falls back to Noto Sans so the deck still builds. The generated PDF and temporary build files stay out of Git.
+XeLaTeX uses Calibri when installed, with Noto Sans as a fallback. pdfLaTeX also builds using Carlito, a metric-compatible Calibri alternative. The generated PDF and temporary build files stay out of Git.
 
 ## Sync local files, GitHub, and Overleaf
 

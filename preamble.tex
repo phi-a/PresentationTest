@@ -1,14 +1,19 @@
 % Research-template slide master, adapted without the Illinois Block I.
 
-\usepackage{fontspec}
-\IfFontExistsTF{Calibri}{%
-  \setmainfont{Calibri}%
-  \setsansfont{Calibri}%
-}{%
-  % Calibri is used whenever it is installed. Noto Sans keeps cloud builds usable.
-  \setmainfont{Noto Sans}%
-  \setsansfont{Noto Sans}%
-}
+\usepackage{iftex}
+\ifPDFTeX
+  % pdfLaTeX cannot load system fonts. Carlito is metrically compatible with Calibri.
+  \usepackage[sfdefault]{carlito}
+\else
+  \usepackage{fontspec}
+  \IfFontExistsTF{Calibri}{%
+    \setmainfont{Calibri}%
+    \setsansfont{Calibri}%
+  }{%
+    \setmainfont{Noto Sans}%
+    \setsansfont{Noto Sans}%
+  }
+\fi
 
 \definecolor{illinoisblue}{HTML}{004C97}
 \definecolor{bodygray}{HTML}{262626}
