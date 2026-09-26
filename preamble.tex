@@ -1,32 +1,74 @@
-% Shared visual rules for this deck. Keep slide-level choices in main.tex.
+% Research-template slide master, adapted without the Illinois Block I.
 
-\definecolor{night}{HTML}{0B1020}
-\definecolor{paper}{HTML}{F4F7FA}
-\definecolor{accent}{HTML}{77D9E8}
+\usepackage{fontspec}
+\IfFontExistsTF{Calibri}{%
+  \setmainfont{Calibri}%
+  \setsansfont{Calibri}%
+}{%
+  % Calibri is used whenever it is installed. Noto Sans keeps cloud builds usable.
+  \setmainfont{Noto Sans}%
+  \setsansfont{Noto Sans}%
+}
 
-\setbeamercolor{background canvas}{bg=night}
-\setbeamercolor{normal text}{fg=paper}
-\setbeamercolor{frametitle}{fg=paper,bg=night}
-\setbeamercolor{structure}{fg=accent}
+\definecolor{illinoisblue}{HTML}{004C97}
+\definecolor{bodygray}{HTML}{262626}
+\definecolor{mutedgray}{HTML}{7F7F7F}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=bodygray}
+\setbeamercolor{frametitle}{fg=illinoisblue,bg=white}
+\setbeamercolor{structure}{fg=illinoisblue}
+\setbeamercolor{itemize item}{fg=illinoisblue}
+\setbeamercolor{itemize subitem}{fg=illinoisblue}
 
-\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
-\setbeamerfont{title}{size=\LARGE,series=\bfseries}
-\setbeamerfont{author}{size=\normalsize}
-\setbeamerfont{date}{size=\small}
+\setbeamerfont{normal text}{family=\sffamily,size=\fontsize{18pt}{22pt}\selectfont}
+\setbeamerfont{frametitle}{family=\sffamily,size=\fontsize{24pt}{29pt}\selectfont,series=\bfseries}
+\setbeamerfont{itemize/enumerate body}{family=\sffamily,size=\fontsize{18pt}{22pt}\selectfont}
+\setbeamerfont{itemize/enumerate subbody}{family=\sffamily,size=\fontsize{18pt}{22pt}\selectfont}
 
 \setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{footline}{%
-  \hfill\usebeamerfont{page number in head/foot}%
-  \usebeamercolor[fg]{normal text}%
-  \insertframenumber\hspace{0.45cm}\vspace{0.25cm}%
-}
-\setbeamercolor{page number in head/foot}{fg=paper}
-\setbeamersize{text margin left=0.9cm,text margin right=0.9cm}
+\setbeamersize{text margin left=0.6cm,text margin right=0.6cm}
+\setlength{\parskip}{0pt}
 
-% Resolve image filenames from figures/ (PNG and PDF are both supported).
+% The reference master uses Fermilab and DarkNESS marks in the header.
+% Figure lookup supports PNG and PDF assets in figures/.
 \graphicspath{{figures/}}
+\newcommand{\ResearchRule}{\textcolor{illinoisblue}{\rule{\dimexpr\paperwidth-1.2cm\relax}{1.25pt}}}
+\newcommand{\ResearchRuleRow}{\hbox to \paperwidth{\hspace*{0.6cm}\ResearchRule\hss}}
+\newcommand{\ResearchPageNumber}{%
+  \hbox to \paperwidth{\hfill{\fontsize{10pt}{10pt}\selectfont\color{illinoisblue}\insertframenumber}\hspace*{0.6cm}}%
+}
 
-% Small set of repeatable content treatments.
-\newcommand{\Takeaway}[1]{{\Large\color{accent}#1\par}}
-\newcommand{\SectionLabel}[1]{{\large\bfseries#1\par}\vspace{0.15cm}}
-\newcommand{\Source}[1]{\vspace{0.18cm}{\tiny Source: #1\par}}
+% Main-slide master: title and both logos, then a blue divider.
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \vbox to 0.86cm{%
+    \vfil
+    \hbox to \paperwidth{%
+      \hspace*{0.6cm}%
+      \begin{minipage}[c][0.62cm][c]{7.05cm}%
+        {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}%
+      \end{minipage}%
+      \hspace*{0.22cm}%
+      \includegraphics[width=1.97cm,height=0.42cm,keepaspectratio]{FERMI_LOGO-1.png}%
+      \hspace*{0.22cm}%
+      \includegraphics[width=2.04cm,height=0.50cm,keepaspectratio]{DarkNESS_LOGO-1.png}%
+      \hfill
+    }%
+    \vfil
+  }%
+  \ResearchRuleRow
+  \vspace*{0.196cm}%
+}
+
+% Main-slide footer: matching blue divider and blue page number.
+\setbeamertemplate{footline}{%
+  \vbox to 0.48cm{%
+    \ResearchRuleRow
+    \vspace*{0.04cm}%
+    \ResearchPageNumber%
+    \vfil
+  }%
+}
+
+% Small, repeatable source line for figures and borrowed evidence.
+\newcommand{\Source}[1]{\vspace{0.18cm}{\fontsize{10pt}{12pt}\selectfont\color{mutedgray}Source: #1\par}}

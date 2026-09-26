@@ -1,4 +1,5 @@
 /build/
+docs/
 *.aux
 *.fdb_latexmk
 *.fls

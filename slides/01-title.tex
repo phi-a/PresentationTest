@@ -1,4 +1,34 @@
-% Opening slide. Keep it quiet: title, author, date.
+% Title slide based on the reference title master. The Block I logo is omitted.
 \begin{frame}[plain]
-  \titlepage
+  \vspace*{0.68cm}
+  \noindent\makebox[\linewidth][l]{%
+    \hspace*{1.76cm}%
+    \includegraphics[width=3.51cm,height=0.75cm,keepaspectratio]{FERMI_LOGO-1.png}%
+    \hspace*{0.36cm}%
+    \includegraphics[width=3.67cm,height=0.90cm,keepaspectratio]{DarkNESS_LOGO-1.png}%
+  }\par
+
+  \vspace*{1.32cm}
+  \noindent\hspace*{0.2cm}%
+  \parbox[t][1.2cm][t]{11.73cm}{%
+    \fontsize{40pt}{48pt}\selectfont\bfseries\color{illinoisblue}\inserttitle\par
+  }
+
+  \vspace*{0.10cm}
+  \noindent\hspace*{0.9cm}%
+  \parbox[t][0.9cm][t]{10.33cm}{%
+    \fontsize{20pt}{24pt}\selectfont\color{bodygray}\insertsubtitle\par
+  }
+
+  \vspace*{0.30cm}
+  \noindent\hspace*{0.9cm}%
+  \parbox[t][0.9cm][t]{10.33cm}{%
+    \fontsize{14pt}{17pt}\selectfont\color{mutedgray}\insertauthor\par
+  }
+
+  \vfill
+  \ResearchRuleRow
+  \vspace*{0.04cm}
+  \ResearchPageNumber
+  \vspace*{0.10cm}
 \end{frame}

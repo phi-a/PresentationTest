@@ -1,6 +1,8 @@
 # Simple Beamer deck
 
-A small 16:9 LaTeX presentation with one consistent look: dark background, light text, one cyan accent, fixed margins, and page numbers. `main.tex` sets up the deck and includes each slide in order. Keep shared styling and image lookup in `preamble.tex`.
+A small 16:9 LaTeX presentation based on `docs/research-template.pptx`. It uses a white background, Calibri text, Illinois blue (`#004C97`) titles and divider rules, dark gray body text, and Fermilab and DarkNESS logos. The Illinois Block I logo is omitted. `main.tex` sets up the deck and includes each slide in order. Keep shared styling and image lookup in `preamble.tex`.
+
+The title slide uses a 40 pt blue title, 20 pt subtitle, and 14 pt gray author line. Content slides use a 24 pt blue title and 18 pt body. The divider rules and page numbers are blue.
 
 ## Slide files
 
@@ -18,13 +20,12 @@ To insert or move a slide, rename the affected files and update the include list
 
 ## Slide rhythm
 
-- Give each slide one clear title.
-- Add one short `\Takeaway{...}` when the slide has a main point.
-- Use one simple arrangement for the evidence: text, columns, a table, a chart, or a figure.
+- Give each content slide one clear title.
+- Use direct, left-aligned body text. Use bullets when listing points.
 - Add `\Source{...}` when a slide uses external evidence.
-- Keep the palette and spacing consistent. Avoid adding decorative elements just to fill space.
+- Keep the master logos, blue divider rules, and spacing consistent.
 
-The example slides show the title, takeaway, two-column, and source treatments. Copy a slide file when adding a slide.
+The example files show the title and content layouts. Copy a slide file when adding a slide.
 
 ## Figures
 
@@ -38,13 +39,13 @@ Prefer PDF for vector figures and PNG for raster images. Keep the original figur
 
 ## Build
 
-With a LaTeX installation that includes Beamer:
+Compile with XeLaTeX so the template can use system fonts:
 
 ```sh
-latexmk -pdf -outdir=build main.tex
+latexmk -xelatex -outdir=build main.tex
 ```
 
-The generated PDF and temporary build files stay out of Git.
+Calibri is used when installed. If the compiler cannot find Calibri, the template falls back to Noto Sans so the deck still builds. The generated PDF and temporary build files stay out of Git.
 
 ## Sync local files, GitHub, and Overleaf
 
