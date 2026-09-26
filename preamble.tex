@@ -39,7 +39,7 @@
 \graphicspath{{figures/}}
 \newcommand{\ResearchRule}{\textcolor{illinoisblue}{\rule{\dimexpr\paperwidth-1.2in\relax}{1.25pt}}}
 \newcommand{\ResearchRuleRow}{\hbox to \paperwidth{\hspace*{0.6in}\ResearchRule\hss}}
-\newcommand{\ResearchBodyRuleRow}{\hspace*{-0.6in}\ResearchRuleRow}
+\newcommand{\ResearchBodyRuleRow}{\hbox to \dimexpr\paperwidth-1.2in\relax{\ResearchRule\hss}}
 \newcommand{\ResearchPageNumber}{%
   \hbox to \paperwidth{\hfill{\fontsize{10pt}{10pt}\selectfont\color{illinoisblue}\insertframenumber}\hspace*{0.6in}}%
 }
@@ -49,9 +49,10 @@
   \nointerlineskip
   \vbox to 0.86in{%
     \vfil
-    \hbox to \paperwidth{%
-      \hspace*{0.6in}%
-      \begin{minipage}[c][0.62in][c]{7.05in}%
+    % Move the header row toward the divider without moving the divider itself.
+    \vskip 0.32in
+    \hbox to \dimexpr\paperwidth-1.2in\relax{%
+      \begin{minipage}[c][0.62in][c]{7.65in}%
         {\usebeamerfont{frametitle}\usebeamercolor[fg]{frametitle}\insertframetitle}%
       \end{minipage}%
       \hspace*{0.22in}%
@@ -60,6 +61,7 @@
       \includegraphics[width=2.04in,height=0.50in,keepaspectratio]{DarkNESS_LOGO-1.png}%
       \hfill
     }%
+    \vskip -0.32in
     \vfil
   }%
   \ResearchBodyRuleRow
